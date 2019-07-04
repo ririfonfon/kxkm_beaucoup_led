@@ -2,7 +2,18 @@
 int test_led_niv = 50;
 
 void leds_show() {
-  digitalLeds_updatePixels(strands[0]);
+  //#ifdef DEBUG
+  //  Serial.print(" r= ");
+  //  Serial.print((pi_n_1_r[1] / 255) * master);
+  //  Serial.print(" g= ");
+  //  Serial.print((pi_n_1_g[1] / 255) * master);
+  //  Serial.print(" b= ");
+  //  Serial.print((pi_n_1_b[1] / 255) * master);
+  //  Serial.print(" w= ");
+  //  Serial.print((pi_n_1_w[1] / 255) * master);
+  //#endif
+
+  //  digitalLeds_updatePixels(strands[0]);
   digitalLeds_updatePixels(strands[1]);
 }//leds_show
 
