@@ -71,8 +71,8 @@ void wifi_event(WiFiEvent_t event) {
 #ifdef DEBUG
         Serial.println("connected");
 #endif
-        //      client.subscribe( "leds/c"+String(BAR_BB_NUMBER) );
-        client.subscribe( "leds/c1" );
+        client.subscribe( ("k32/c"+String(BAR_BB_NUMBER)+"/leds").c_str() );
+        client.subscribe( "k32/all/leds" );
       } else {
 #ifdef DEBUG
         Serial.print("failed, rc=");
