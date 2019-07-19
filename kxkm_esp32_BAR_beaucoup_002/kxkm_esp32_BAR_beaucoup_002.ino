@@ -1,6 +1,6 @@
 /////////////////////////////////////////ID/////////////////////////////////////////
 #define BAR_BB_NUMBER 6
-#define VERSION 19
+#define VERSION 20
 #define NOEUX 0
 
 ////////////////////////////////////////TaskHandle_t //////////////////////////////////
@@ -23,6 +23,7 @@ int N_L_P_S = NUM_LEDS_PER_STRIP;
 //#define DEBUG_STR 1
 
 /////////////////////////////////////////lib/////////////////////////////////////////
+#include "KXKM_STM32_energy_API.h"
 #include <WiFi.h>
 //#include <WiFiUdp.h>
 //#include <ArtnetWifi.h>//https://github.com/rstephan/ArtnetWifi
@@ -167,9 +168,9 @@ int etat_r = 0;
 
 ///////////////////////////////////////////////// SETUP ////////////////////////////////////////
 void setup() {
-//#ifdef DEBUG
-//  Serial.begin(115200);
-//#endif
+
+    Serial.begin(115200);
+
   ///////////////////////////////////////////////// BAR_BB_NUMBER ID //////////////////////////////////////
 #ifdef BAR_BB_NUMBER
   eeprom_setID((byte)BAR_BB_NUMBER);
@@ -197,6 +198,9 @@ void setup() {
   //  create a task that will be executed in the Map1code() function, with priority 1 and executed on core 0
   xTaskCreatePinnedToCore(Map1code, "Map1code", 4096, NULL, 1, NULL, 1);   // core 1 = loop
   xTaskCreatePinnedToCore(effTask, "effTask", 4096, NULL, 1, NULL, 0);    // core 0 = wifi
+
+  ///////////////////////////////////////////////// osc //////////////////////////////////////
+  oscC_start();
 
 }//setup
 
