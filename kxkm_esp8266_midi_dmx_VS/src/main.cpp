@@ -16,7 +16,7 @@ const char *password = "";
 // const char *ssid = "riri_new";
 // const char *password = "B2az41opbn6397";
 
-const char *mqtt_server = "2.0.0.1";
+const char *mqtt_server = "10.0.0.1";
 
 WiFiClient espClient;
 PubSubClient client(espClient);

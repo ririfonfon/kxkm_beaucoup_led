@@ -6,9 +6,9 @@ void copyDMXToOutput(char* topic, uint8_t* data, unsigned int length) {
     if (i <= length) {
       ESP8266DMX.setSlot(i , (uint8_t((data[i-1]*data[i-1]) / 255)));
 #ifdef DEBUGDMX
-      Serial.print(i);
+      Serial.print(i-1);
       Serial.print(" = ");
-      Serial.println(data[i]);
+      Serial.println(data[i-1]);
 #endif
     }
   }

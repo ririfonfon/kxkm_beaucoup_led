@@ -46,8 +46,8 @@ void reconnect() {
       Serial.println("connected");
 #endif
       // ... and resubscribe
-      client.subscribe("k32/c16/leds");
-      client.subscribe("k32/all/leds");
+      client.subscribe("k32/c16/leds/dmx");
+      client.subscribe("k32/all/leds/dmx");
     } else {
 #ifdef DEBUG
       Serial.print("failed, rc=");
