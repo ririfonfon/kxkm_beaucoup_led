@@ -21,7 +21,7 @@ const char *mqtt_server = "10.0.0.1";
 WiFiClient espClient;
 PubSubClient client(espClient);
 
-// #define DEBUG 1
+#define DEBUG 1
 // #define DEBUGDMX 1
 // #define DEBUGDMXvalue 1
 
@@ -40,7 +40,7 @@ float dmxbuffer[DMX_MAX_FRAME];
 /**************************** SETUP ********************/
 void setup()
 {
-
+delay(5000);
 #ifdef DEBUG
   Serial.begin(115200);     //74880 freq de l'esp8266 crash
   Serial.setDebugOutput(1); //use uart0 for debugging

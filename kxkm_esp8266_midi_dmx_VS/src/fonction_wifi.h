@@ -45,15 +45,15 @@ void reconnect() {
 #ifdef DEBUG
       Serial.println("connected");
 #endif
-      // ... and resubscribe
-      client.subscribe("k32/c16/leds/dmx");
-      client.subscribe("k32/all/leds/dmx");
+      // ... and resubscribe  
+      client.subscribe("k32/+/midinode");
     } else {
 #ifdef DEBUG
       Serial.print("failed, rc=");
       Serial.print(client.state());
       Serial.println(" try again in 5 seconds");
 #endif
+      delay(2000);
     }
   }
 }
