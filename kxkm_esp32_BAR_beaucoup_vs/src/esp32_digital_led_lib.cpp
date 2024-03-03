@@ -28,6 +28,7 @@
 */
 
 #include "esp32_digital_led_lib.h"
+#include <soc/dport_reg.h> // ESP-IDF 4
 
 #ifdef __cplusplus
 extern "C" {
